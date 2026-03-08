@@ -1,9 +1,13 @@
-import Navigation from "@/components/Navigation";
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ProcessSection from "@/components/ProcessSection";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
-import Footer from "@/components/Footer";
 import { TrendingUp, BarChart3, Users } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Social Media Marketing",
+  description: "We help businesses build powerful social media presence that drives engagement, builds communities, and generates real results. Let's make your brand unforgettable.",
+};
 
 const marketingSteps = [
   {
@@ -50,8 +54,7 @@ const marketingSteps = [
 
 export default function SocialMediaMarketingPage() {
   return (
-    <main className="min-h-screen">
-      <Navigation />
+    <>
       <Hero
         title="Social Media Marketing"
         subtitle="Grow Your Brand"
@@ -66,7 +69,6 @@ export default function SocialMediaMarketingPage() {
       />
       <ProcessSection title="Our Marketing Process" steps={marketingSteps} />
       <PortfolioShowcase />
-      <Footer />
-    </main>
+    </>
   );
 }

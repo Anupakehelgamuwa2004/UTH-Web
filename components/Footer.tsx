@@ -1,9 +1,10 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
-export default function Footer() {
+const Footer = memo(function Footer() {
   return (
     <footer id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Text */}
@@ -136,4 +137,8 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = "Footer";
+
+export default Footer;

@@ -1,10 +1,14 @@
-import Navigation from "@/components/Navigation";
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
 import ProcessSection from "@/components/ProcessSection";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
-import Footer from "@/components/Footer";
 import { Code2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Transform your digital presence with premium web design, development, and social media marketing services. Experience the difference of professional digital solutions.",
+};
 
 const defaultProcessSteps = [
   {
@@ -51,8 +55,7 @@ const defaultProcessSteps = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navigation />
+    <>
       <Hero
         title="Transform Your Digital Presence"
         subtitle="Premium Digital Solutions"
@@ -62,7 +65,6 @@ export default function Home() {
       <ServicesGrid />
       <ProcessSection title="Our Process" steps={defaultProcessSteps} />
       <PortfolioShowcase />
-      <Footer />
-    </main>
+    </>
   );
 }

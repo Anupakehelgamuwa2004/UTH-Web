@@ -1,9 +1,10 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, TrendingUp } from "lucide-react";
 
-export default function PortfolioShowcase() {
+const PortfolioShowcase = memo(function PortfolioShowcase() {
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -117,4 +118,8 @@ export default function PortfolioShowcase() {
       </section>
     </>
   );
-}
+});
+
+PortfolioShowcase.displayName = "PortfolioShowcase";
+
+export default PortfolioShowcase;

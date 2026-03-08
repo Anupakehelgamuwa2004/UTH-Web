@@ -1,9 +1,13 @@
-import Navigation from "@/components/Navigation";
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ProcessSection from "@/components/ProcessSection";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
-import Footer from "@/components/Footer";
 import { Code2, Palette, Smartphone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Web Design & Development",
+  description: "We craft exceptional websites that combine stunning design with powerful functionality. From concept to deployment, we deliver digital experiences that captivate and convert.",
+};
 
 const webDesignSteps = [
   {
@@ -50,8 +54,7 @@ const webDesignSteps = [
 
 export default function WebDesignPage() {
   return (
-    <main className="min-h-screen">
-      <Navigation />
+    <>
       <Hero
         title="Web Design & Development"
         subtitle="Premium Web Solutions"
@@ -66,7 +69,6 @@ export default function WebDesignPage() {
       />
       <ProcessSection title="Our Web Design Process" steps={webDesignSteps} />
       <PortfolioShowcase />
-      <Footer />
-    </main>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 
 interface ProcessStep {
@@ -13,7 +14,7 @@ interface ProcessSectionProps {
   steps: ProcessStep[];
 }
 
-export default function ProcessSection({ title, steps }: ProcessSectionProps) {
+const ProcessSection = memo(function ProcessSection({ title, steps }: ProcessSectionProps) {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
       <div className="max-w-7xl mx-auto">
@@ -60,4 +61,8 @@ export default function ProcessSection({ title, steps }: ProcessSectionProps) {
       </div>
     </section>
   );
-}
+});
+
+ProcessSection.displayName = "ProcessSection";
+
+export default ProcessSection;

@@ -1,7 +1,8 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
-import { Code2, TrendingUp, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 interface HeroProps {
   title: string;
@@ -10,7 +11,7 @@ interface HeroProps {
   icon?: React.ReactNode;
 }
 
-export default function Hero({ title, subtitle, description, icon }: HeroProps) {
+const Hero = memo(function Hero({ title, subtitle, description, icon }: HeroProps) {
   return (
     <section className="min-h-screen flex items-center pt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
@@ -86,4 +87,8 @@ export default function Hero({ title, subtitle, description, icon }: HeroProps) 
       </div>
     </section>
   );
-}
+});
+
+Hero.displayName = "Hero";
+
+export default Hero;

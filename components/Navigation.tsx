@@ -1,20 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function Navigation() {
+const Navigation = memo(function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 20);
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen((prev) => !prev);
+  }, []);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
   }, []);
 
   return (
@@ -63,7 +72,9 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -80,28 +91,28 @@ export default function Navigation() {
             <Link
               href="/"
               className="block text-white hover:text-primary-red transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               Home
             </Link>
             <Link
               href="/web-design"
               className="block text-white hover:text-primary-red transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               Web Design & Development
             </Link>
             <Link
               href="/social-media-marketing"
               className="block text-white hover:text-primary-red transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               Social Media Marketing
             </Link>
             <Link
               href="#contact"
               className="block bg-primary-red text-white px-6 py-2.5 rounded-md font-bold text-center"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               TALK TO US
             </Link>
@@ -110,4 +121,8 @@ export default function Navigation() {
       </div>
     </motion.nav>
   );
-}
+});
+
+Navigation.displayName = "Navigation";
+
+export default Navigation;
