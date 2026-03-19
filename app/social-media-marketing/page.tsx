@@ -1,18 +1,57 @@
-import type { Metadata } from "next";
-import Hero from "@/components/Hero";
-import ProcessSection from "@/components/ProcessSection";
-import PortfolioShowcase from "@/components/PortfolioShowcase";
-import { TrendingUp, BarChart3, Users } from "lucide-react";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Social Media Marketing",
-  description: "We help businesses build powerful social media presence that drives engagement, builds communities, and generates real results. Let's make your brand unforgettable.",
+import Hero from "@/components/Hero";
+import WhatWeOffer from "@/components/WhatWeOffer";
+import ProcessSection from "@/components/ProcessSection";
+import { TrendingUp, BarChart3, Users, FileText, Target, Megaphone } from "lucide-react";
+
+
+const marketingServices = [
+  {
+    iconName: "FileText",
+    title: "Content Creation",
+    description: "Engaging, high-quality content that resonates with your audience and drives action",
+  },
+  {
+    iconName: "Target",
+    title: "Paid Ad Campaigns",
+    description: "Strategic paid advertising across platforms to reach your target audience effectively",
+  },
+  {
+    iconName: "BarChart3",
+    title: "Analytics",
+    description: "Comprehensive data analysis and reporting to measure ROI and optimize performance",
+  },
+  {
+    iconName: "Users",
+    title: "Community Management",
+    description: "Active engagement and relationship building with your audience across all platforms",
+  },
+  {
+    iconName: "TrendingUp",
+    title: "Growth Strategy",
+    description: "Data-driven strategies to expand your reach and grow your online presence",
+  },
+  {
+    iconName: "Megaphone",
+    title: "Brand Awareness",
+    description: "Multi-channel campaigns that increase visibility and strengthen brand recognition",
+  },
+];
+
+const marketingIconMap = {
+  FileText,
+  Target,
+  BarChart3,
+  Users,
+  TrendingUp,
+  Megaphone,
 };
 
 const marketingSteps = [
   {
     number: "01",
-    title: "Discovery & Goal Setting",
+    title: "Discovery",
     description: "Understanding your brand and defining success metrics",
   },
   {
@@ -22,31 +61,16 @@ const marketingSteps = [
   },
   {
     number: "03",
-    title: "Strategy Development",
+    title: "Strategy",
     description: "Creating comprehensive marketing strategies",
   },
   {
     number: "04",
-    title: "Content Creation",
-    description: "Producing engaging, high-quality content",
-  },
-  {
-    number: "05",
-    title: "Campaign Execution",
+    title: "Execution",
     description: "Launching and managing multi-channel campaigns",
   },
   {
-    number: "06",
-    title: "Performance Tracking",
-    description: "Monitoring metrics and analyzing results",
-  },
-  {
-    number: "07",
-    title: "Community Management",
-    description: "Engaging with your audience and building relationships",
-  },
-  {
-    number: "08",
+    number: "05",
     title: "Reporting",
     description: "Delivering insights and optimization recommendations",
   },
@@ -59,16 +83,10 @@ export default function SocialMediaMarketingPage() {
         title="Social Media Marketing"
         subtitle="Grow Your Brand"
         description="We help businesses build powerful social media presence that drives engagement, builds communities, and generates real results. Let's make your brand unforgettable."
-        icon={
-          <div className="flex flex-col items-center gap-4">
-            <TrendingUp className="w-24 h-24 text-primary-red" />
-            <BarChart3 className="w-20 h-20 text-primary-red" />
-            <Users className="w-16 h-16 text-primary-red" />
-          </div>
-        }
+        iconType="marketing"
       />
+      <WhatWeOffer title="What We Offer" services={marketingServices} iconMap={marketingIconMap} />
       <ProcessSection title="Our Marketing Process" steps={marketingSteps} />
-      <PortfolioShowcase />
     </>
   );
 }

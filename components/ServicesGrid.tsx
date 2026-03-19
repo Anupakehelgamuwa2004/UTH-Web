@@ -70,7 +70,7 @@ const ServicesGrid = memo(function ServicesGrid() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">
             What We Offer
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Comprehensive digital solutions to elevate your business
           </p>
         </motion.div>
@@ -85,13 +85,13 @@ const ServicesGrid = memo(function ServicesGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-900/50 p-6 rounded-lg border border-gray-800 hover:border-primary-red transition-all group"
+                className="bg-navy/10 p-6 rounded-lg border border-navy/30 hover:border-navy transition-all group"
               >
                 <div className="mb-4">
-                  <Icon className="w-12 h-12 text-primary-red group-hover:scale-110 transition-transform" />
+                  <Icon className="w-12 h-12 text-navy group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-white/80 text-sm leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>

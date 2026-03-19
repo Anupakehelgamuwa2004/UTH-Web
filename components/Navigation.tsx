@@ -45,25 +45,25 @@ const Navigation = memo(function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-white hover:text-primary-red transition-colors font-medium"
+              className="text-white hover:text-navy transition-colors font-medium"
             >
               Home
             </Link>
             <Link
               href="/web-design"
-              className="text-white hover:text-primary-red transition-colors font-medium"
+              className="text-white hover:text-navy transition-colors font-medium"
             >
               Web Design & Development
             </Link>
             <Link
               href="/social-media-marketing"
-              className="text-white hover:text-primary-red transition-colors font-medium"
+              className="text-white hover:text-navy transition-colors font-medium"
             >
               Social Media Marketing
             </Link>
             <Link
               href="#contact"
-              className="bg-primary-red text-white px-6 py-2.5 rounded-md font-bold hover:bg-red-600 transition-colors"
+              className="bg-navy text-white px-6 py-2.5 rounded-md font-bold hover:bg-navy/80 transition-colors"
             >
               TALK TO US
             </Link>
@@ -90,28 +90,28 @@ const Navigation = memo(function Navigation() {
           >
             <Link
               href="/"
-              className="block text-white hover:text-primary-red transition-colors"
+              className="block text-white hover:text-navy transition-colors"
               onClick={closeMobileMenu}
             >
               Home
             </Link>
             <Link
               href="/web-design"
-              className="block text-white hover:text-primary-red transition-colors"
+              className="block text-white hover:text-navy transition-colors"
               onClick={closeMobileMenu}
             >
               Web Design & Development
             </Link>
             <Link
               href="/social-media-marketing"
-              className="block text-white hover:text-primary-red transition-colors"
+              className="block text-white hover:text-navy transition-colors"
               onClick={closeMobileMenu}
             >
               Social Media Marketing
             </Link>
             <Link
               href="#contact"
-              className="block bg-primary-red text-white px-6 py-2.5 rounded-md font-bold text-center"
+              className="block bg-navy text-white px-6 py-2.5 rounded-md font-bold text-center"
               onClick={closeMobileMenu}
             >
               TALK TO US

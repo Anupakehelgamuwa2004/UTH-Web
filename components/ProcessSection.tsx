@@ -16,7 +16,7 @@ interface ProcessSectionProps {
 
 const ProcessSection = memo(function ProcessSection({ title, steps }: ProcessSectionProps) {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-navy/5">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,18 +41,18 @@ const ProcessSection = memo(function ProcessSection({ title, steps }: ProcessSec
               className="text-center"
             >
               <div className="relative mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full bg-primary-red/20 border-4 border-primary-red flex items-center justify-center">
-                  <span className="text-3xl font-black text-primary-red">
+                <div className="w-24 h-24 mx-auto rounded-full bg-navy/20 border-4 border-navy flex items-center justify-center">
+                  <span className="text-3xl font-black text-navy">
                     {step.number}
                   </span>
                 </div>
                 {/* Show connecting line only if not the last item in a row (every 4th item) */}
                 {index < steps.length - 1 && (index + 1) % 4 !== 0 && (
-                  <div className="hidden lg:block absolute top-12 left-[calc(50%+3rem)] w-[calc(100%-6rem)] h-0.5 bg-primary-red/30 -z-10"></div>
+                  <div className="hidden lg:block absolute top-12 left-[calc(50%+3rem)] w-[calc(100%-6rem)] h-0.5 bg-navy/30 -z-10"></div>
                 )}
               </div>
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

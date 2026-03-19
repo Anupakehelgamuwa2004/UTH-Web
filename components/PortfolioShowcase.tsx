@@ -63,17 +63,17 @@ const PortfolioShowcase = memo(function PortfolioShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-primary-red transition-all"
+                className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-navy/10 to-black border border-navy/30 hover:border-navy transition-all"
               >
-                <div className="h-64 bg-gradient-to-br from-primary-red/20 to-primary-red/5 flex items-center justify-center">
-                  <ExternalLink className="w-16 h-16 text-primary-red/50 group-hover:text-primary-red transition-colors" />
+                <div className="h-64 bg-gradient-to-br from-navy/20 to-navy/5 flex items-center justify-center">
+                  <ExternalLink className="w-16 h-16 text-navy/50 group-hover:text-navy transition-colors" />
                 </div>
                 <div className="p-6">
-                  <div className="text-primary-red text-sm font-bold mb-2">
+                  <div className="text-navy text-sm font-bold mb-2">
                     {project.category}
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-400">{project.description}</p>
+                  <p className="text-white/80">{project.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -82,7 +82,7 @@ const PortfolioShowcase = memo(function PortfolioShowcase() {
       </section>
 
       {/* Strategies That Drive Sales */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-navy/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -104,11 +104,11 @@ const PortfolioShowcase = memo(function PortfolioShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 hover:border-primary-red transition-all group"
+                className="bg-navy/10 p-8 rounded-lg border border-navy/30 hover:border-navy transition-all group"
               >
-                <TrendingUp className="w-12 h-12 text-primary-red mb-4 group-hover:scale-110 transition-transform" />
+                <TrendingUp className="w-12 h-12 text-navy mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-2xl font-bold mb-3">{strategy.title}</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-white/80 leading-relaxed">
                   {strategy.description}
                 </p>
               </motion.div>
